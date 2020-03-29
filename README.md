@@ -11,10 +11,9 @@
 ### 具体实现过程
 
 #### 1、生成测试数据
-  生成测试数据用到了C++11<random>中的random_device。  
-  URL的组成被分成三部分，Head+Body+Tail。  
+  生成测试数据用到了C++11<random>中的random_device。URL的组成被分成三部分，Head+Body+Tail。  
   Head会随机选择"Http://"或"Https://"一种。  
-  Body会随机截取预设字符串中随机长度的一段（为了让url的重复度提高，而放弃了全随机）
+  Body会随机截取预设字符串中随机长度的一段（为了让url的重复度提高，而放弃了全随机）  
   Tail会固定加上".com/problem_pid="并在最后随机生成一个0-99的数字。
   所以最终生成的Url长这样：Http://abcdefghijk.com/problem_pid=66
   
