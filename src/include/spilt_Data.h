@@ -1,3 +1,5 @@
+#ifndef URLTOPN_SPILT_DATA_H
+#define URLTOPN_SPILT_DATA_H
 #include "Data.h"
 class spilt_Data :public Data {
 public:
@@ -16,3 +18,4 @@ public:
     void spiltData_read();
     void spiltData_end();
 };
+#endif

@@ -1,5 +1,5 @@
-#ifndef URLTOP100_DATA_H
-#define URLTOP100_DATA_H
+#ifndef URLTOPN_DATA_H
+#define URLTOPN_DATA_H
 #include<fstream>
 #include "Url.h"
 #include<queue>

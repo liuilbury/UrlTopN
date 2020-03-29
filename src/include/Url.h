@@ -1,3 +1,5 @@
+#ifndef URLTOPN_URL_H
+#define URLTOPN_URL_H
 #include <string>
 #include <random>
 #include <map>
@@ -12,3 +14,4 @@ private:
     std::string GetBody();
     std::string GetTail();
 };
+#endif

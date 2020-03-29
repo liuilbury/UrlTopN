@@ -1,3 +1,5 @@
+#ifndef URLTOPN_MERGE_DATA_H
+#define URLTOPN_MERGE_DATA_H
 #include "Data.h"
 #include <unordered_map>
 class merge_Data :public Data{
@@ -17,3 +19,4 @@ public:
     void mergeData_read_AND_write();
     void mergeData_Top100_finish();
 };
+#endif
