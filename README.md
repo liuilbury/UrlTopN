@@ -42,8 +42,10 @@
    - spilt_Data.cpp里实现了拆分文件的相关函数  
    - merge_Data.cpp里实现了合并文件的相关函数  
 ### 程序演示
-#### 运行后
-
+#### 创建文件
+![image](https://github.com/liuilbury/UrlTopN/blob/master/img/01.png)
+#### 求TopN
+![image](https://github.com/liuilbury/UrlTopN/blob/master/img/02.gif)
 
 ### 优点和不足
 - 优点
