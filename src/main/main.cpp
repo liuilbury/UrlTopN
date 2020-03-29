@@ -2,27 +2,31 @@
 #include<thread>
 #include "spilt_Data.h"
 #include "merge_Data.h"
-int n, size;
+int n;
+size_t size;
 std::string filename;
-
-void GetInfo() {
-    std::cout << "请输入文件地址" << std::endl;
-    std::cin >> filename;
-    std::cout << "请输入文件大小" << std::endl;
-    std::cin >> size;
+size_t GetFileSize(const std::string& file_name) {
+    std::ifstream in(file_name);
+    in.seekg(0, std::ios::end);
+    size_t size = in.tellg();
+    in.close();
+    return size; //单位是：byte
 }
-
 void Create() {
-    GetInfo();
+    std::cout << "请输入想要生成到的位置" << std::endl;
+    std::cin >> filename;
+    std::cout << "请输入文件大小(单位M)" << std::endl;
+    std::cin >> size;
+    std::cout << "生成文件中..." << std::endl;
     Data().createData(filename, size);
-    std::cout << "生成文件到:"+filename+"/data.txt" << std::endl;
+    std::cout << "生成文件到:"+filename+"\\data.txt" << std::endl;
 }
 
 void SpiltFile() {
     spilt_Data data;
     data.spiltData_init();
     data.filename = filename;
-    data.looptimes = 1024 * 1024 * size / data.urlsize;
+    data.looptimes = size / data.urlsize;
     std::cout << "拆分文件中..." << std::endl;
     //单线程读多线程写
     std::thread read(&spilt_Data::spiltData_read, &data);
@@ -62,7 +66,9 @@ void MergeFile(int n) {
     }
 }
 void run() {
-    GetInfo();
+    std::cout << "请输入文件地址" << std::endl;
+    std::cin >> filename;
+    size = GetFileSize(filename);
     std::cout << "请输入需要前多少个URL" << std::endl;
     int n;
     std::cin >> n;

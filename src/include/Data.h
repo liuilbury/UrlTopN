@@ -12,7 +12,7 @@ class Data {
 public:
     std::string filename;
     const int urlsize = 40;  //认为一条url近似40B大小
-    int looptimes;
+    long long looptimes;
     void createData(std::string filename,int size);
 };
 #endif

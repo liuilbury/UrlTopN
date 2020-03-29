@@ -36,8 +36,10 @@ void merge_Data::mergeData_Top100_easy() {
         v.clear();
         v.shrink_to_fit();
         count++;
-        system("cls");
-        std::cout <<"当前进度:" <<count / 2.0 <<"%"<<std::endl;
+        if (count % 10 == 0) {
+            system("cls");
+            std::cout << "当前进度:" << count / 2.0 << "%" << std::endl;
+        }
     }
 }
 
