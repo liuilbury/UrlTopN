@@ -1,6 +1,5 @@
 #include "Url.h"
 #include <random>
-#include <algorithm>
 Url::Url() {}
 std::string Url::GetUrl() {
     return Url::GetHead()+Url::GetBody()+Url::GetTail();
