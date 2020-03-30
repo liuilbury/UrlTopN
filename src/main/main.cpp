@@ -8,9 +8,9 @@ std::string filename;
 size_t GetFileSize(const std::string& file_name) {
     std::ifstream in(file_name);
     in.seekg(0, std::ios::end);
-    size_t size = in.tellg();
+    size_t Size = in.tellg();
     in.close();
-    return size; //单位是：byte
+    return Size; //单位是：byteS
 }
 void Create() {
     std::cout << "请输入想要生成到的位置" << std::endl;
@@ -41,8 +41,7 @@ void SpiltFile() {
     write4.join();
     std::cout << "拆分文件完成" << std::endl;
     //最后的剩余url进行写入
-    std::thread End(&spilt_Data::spiltData_end, &data);
-    End.join();
+    data.spiltData_end();
 }
 
 void MergeFile(int n) {
@@ -50,6 +49,7 @@ void MergeFile(int n) {
     data.N=n;
     data.mergeData_init();
     std::cout << "解析文件中" << std::endl;
+    //多线程读取
     std::thread read1(&merge_Data::mergeData_Top100_easy, &data);
     std::thread read2(&merge_Data::mergeData_Top100_easy, &data);
     std::thread read3(&merge_Data::mergeData_Top100_easy, &data);
@@ -68,7 +68,7 @@ void MergeFile(int n) {
 void run() {
     std::cout << "请输入文件地址" << std::endl;
     std::cin >> filename;
-    size = GetFileSize(filename);
+    size = GetFileSize(filename);//得到文件大小
     std::cout << "请输入需要前多少个URL" << std::endl;
     int n;
     std::cin >> n;
