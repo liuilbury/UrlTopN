@@ -46,7 +46,8 @@
 ![image](https://github.com/liuilbury/UrlTopN/blob/master/img/01.png)
 #### 求TopN
 ![image](https://github.com/liuilbury/UrlTopN/blob/master/img/02.gif)
-
+#### 计算1GB的URL使用时间
+![image](https://github.com/liuilbury/UrlTopN/blob/master/img/03.png)
 ### 优点和不足
 - 优点
    - 可以在可以接受的时间里正确的算出出现次数top100的url，实现了原本的目的。  
