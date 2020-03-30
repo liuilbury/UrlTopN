@@ -37,7 +37,7 @@
 - inclde文件夹内存放.h文件
 - main文件夹内存放.cpp文件
    - main.c是程序入口
-   - Data.cpp里实现了创建测试数据的相关函数  
+   - Data.cpp里实现了创建测试数据的相关函数(默认在给定地址下创建"data.txt"文件)  
    - Url.cpp里实现了创建一条Url的相关函数  
    - spilt_Data.cpp里实现了拆分文件的相关函数(默认将拆分文件储存在"../../../data/spiltData/")  
    - merge_Data.cpp里实现了合并文件的相关函数(默认将最后结果储存在"../../../data/spiltData/ans.txt")  
