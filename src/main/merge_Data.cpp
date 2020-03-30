@@ -22,7 +22,7 @@ void merge_Data::mergeData_Top100_easy() {
         std::ifstream file("../../../data/spiltData/" + std::to_string(t) + ".txt");
         std::map<std::string, int> mpp;
         std::string query;
-        while (getline(file, query)) {
+        while (getline(file, query)) {//计算URL出现次数
             mpp[query]++;
         }
         file.close();
